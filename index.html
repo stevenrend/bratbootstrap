@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #222222;
+            color: white;
+        }
+        .bg-green {
+            background-color: #94FD23 !important;
+            color: black;
+        }
+        .bg-dark {
+            background-color: #222222 !important;
+        }
+        .btn-green {
+            background-color: #94FD23;
+            color: black;
+        }
+        .btn-dark {
+            background-color: black;
+            color: white;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+        .bg-green a, .bg-green p, .bg-green .nav-link {
+            color: black !important;
+        }
+        .bg-green .btn {
+            color: black !important;
+        }
+        .modal-content{
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="toast-container">
+        <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Your application has been received!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Content.png" alt="Logo" height="36">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Home</a>
+                    </li>
+        
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item text-white" href="#">Web Design</a></li>
+                            <li><a class="dropdown-item text-white" href="#">UI/UX Design</a></li>
+                            <li><a class="dropdown-item text-white" href="#">App Development</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Digital Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Portfolio</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <button class="btn btn-green ms-md-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            Contact
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5 bg-green text-center text-dark">
+        <div class="container">
+            <h1 class="display-4 ">Transform Your Vision into Stunning Reality</h1>
+            <p class="lead">At our Creative Design Agency, we specialize in crafting unique and impactful designs that resonate with your audience. Let us elevate your brand to new heights with our innovative solutions.</p>
+            <div class="mt-4">
+                <button class="btn btn-outline-dark me-2">Get Started</button>
+                <button class="btn btn-outline-dark">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-dark text-center">
+        <div class="container">
+            <h3 class="text-uppercase">Innovate</h3>
+            <h2>Creative Solutions for You</h2>
+            <p>Transforming Ideas into Stunning Designs</p>
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="container">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/images/Image.png" class="d-block w-100" alt="Slide 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/idk.png" class="d-block w-100" alt="Slide 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/Vector.jpg" class="d-block w-100" alt="Slide 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button">Design</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing" type="button">Marketing</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="development-tab" data-bs-toggle="tab" data-bs-target="#development" type="button">Development</button>
+                </li>
+            </ul>
+            <div class="tab-content mt-4" id="myTabContent">
+                <div class="tab-pane fade show active" id="design" role="tabpanel">
+                    <p>Tailored Branding Strategies for Success. We craft unique brand identities that resonate with your audience and elevate your business.</p>
+                </div>
+                <div class="tab-pane fade" id="marketing" role="tabpanel">
+                    <p>Strategic Marketing That Drives Results. Maximizing your reach with targeted campaigns.</p>
+                </div>
+                <div class="tab-pane fade" id="development" role="tabpanel">
+                    <p>Engaging User Experiences That Captivate. Designing seamless interactions for your audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            How long does a project take?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Depends on complexity, but typically 4-8 weeks.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Do you offer ongoing support?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer maintenance packages.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-green">
+        <div class="container">
+            <h2 class="text-center">Client Stories</h2>
+            <p class="text-center">Our clients love the transformative power of design.</p>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="images/Stars.png" alt="Stars">
+                            <p>"Working with this agency was a game-changer for us!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/images/Avatar Image.png" alt="Avatar" class="rounded-circle me-2" width="40">
+                                <span>Jane Doe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="images/Stars.png" alt="Stars">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/images/Avatar Image.png" alt="Avatar" class="rounded-circle me-2" width="40">
+                                <span>Name Surname</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="images/Stars.png" alt="Stars">
+                            <p>The team understood our vision and brought it to life.</p>
+                            <div class="d-flex align-items-center">
+                                <img src="/images/Avatar Image.png" alt="Avatar" class="rounded-circle me-2" width="40">
+                                <span>John Smith</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <h3 class="text-center mb-4">Contact Us</h3>
+            <form id="mainContactForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                        <div class="invalid-feedback">Valid first name is required.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                        <div class="invalid-feedback">Valid last name is required.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                        <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-green btn-lg" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Fill out the form below and we'll get back to you soon!</p>
+                    <form id="modalContactForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="modalFirstName" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="modalFirstName" required>
+                                <div class="invalid-feedback">Valid first name is required.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="modalLastName" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="modalLastName" required>
+                                <div class="invalid-feedback">Valid last name is required.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="modalEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="modalEmail" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="modalMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="modalMessage" rows="4" required></textarea>
+                                <div class="invalid-feedback">Please enter your message.</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                   
+                    <button id="modalSubmitBtn" type="button" class="btn btn-success">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-green text-dark py-4"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/images/Logo-wide 1.png" alt="Logo" height="40">
+                    <p class="mt-3">Level 1, 12 Sample St, Sydney NSW 2000</p>
+                    <p>1800 123 4567</p>
+                    <p>info@relume.io</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-1">© 2025 All rights reserved.</p>
+                    <a href="#" class="text-dark">Privacy Policy</a> |
+                    <a href="#" class="text-dark">Terms of Service</a> |
+                    <a href="#" class="text-dark">Cookies Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity()) {
+                        event.preventDefault(); 
+                        
+                        var toastEl = document.getElementById('successToast');
+                        var toast = new bootstrap.Toast(toastEl);
+                        toast.show();
+                        form.classList.remove('was-validated'); 
+                        form.reset(); 
+                    } else {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+
+            
+            document.getElementById('modalSubmitBtn').addEventListener('click', function () {
+                var modalForm = document.getElementById('modalContactForm');
+                if (modalForm.checkValidity()) {
+                    
+                    var toastEl = document.getElementById('successToast');
+                    var toast = new bootstrap.Toast(toastEl);
+                    toast.show();
+                    modalForm.classList.remove('was-validated'); 
+                    modalForm.reset(); 
+                    
+                    var modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                    modal.hide();
+                } else {
+                    modalForm.classList.add('was-validated');
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
